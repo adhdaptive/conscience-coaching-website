@@ -39,11 +39,10 @@
 
   const status = document.querySelector("[data-blog-status]");
 
-  filterGroup.addEventListener("click", event => {
-    const button = event.target.closest("[data-filter]");
+  const applyFilter = selected => {
+    const button = Array.from(filterGroup.querySelectorAll("[data-filter]"))
+      .find(item => item.dataset.filter === selected);
     if (!button) return;
-
-    const selected = button.dataset.filter;
 
     filterGroup.querySelectorAll("[data-filter]").forEach(item => {
       item.setAttribute("aria-pressed", String(item === button));
@@ -62,5 +61,15 @@
         ? `Showing all ${visible} articles.`
         : `Showing ${visible} article${visible === 1 ? "" : "s"} tagged ${selected}.`;
     }
+  };
+
+  filterGroup.addEventListener("click", event => {
+    const button = event.target.closest("[data-filter]");
+    if (!button) return;
+
+    applyFilter(button.dataset.filter);
   });
+
+  const requestedTopic = new URLSearchParams(window.location.search).get("topic");
+  if (requestedTopic) applyFilter(requestedTopic);
 })();
