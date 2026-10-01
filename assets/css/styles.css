@@ -73,3 +73,22 @@
   .site-footer .footer-memberships{width:min(100%,18rem);justify-content:center}
   .site-footer .footer-note{text-align:center}
 }
+
+
+/* Events notice is only needed beside the embedded desktop Plinth feed */
+@media(max-width:52rem){
+  .desktop-only-plinth-notice{display:none}
+}
+
+/* Balanced mobile footer */
+@media(max-width:52rem){
+  .site-footer .footer-grid{display:grid;grid-template-columns:1fr;justify-items:stretch;text-align:center}
+  .site-footer .footer-grid>div:first-child{width:100%}
+  .site-footer .social-links{justify-content:center}
+  .site-footer nav{display:grid;width:100%;max-width:20rem;margin-inline:auto;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem;row-gap:.45rem;text-align:left}
+  .site-footer nav a{display:block;width:100%}
+  .site-footer nav a:nth-child(even){text-align:left}
+  .site-footer .footer-memberships{display:grid;width:100%;max-width:20rem;margin-inline:auto;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem;row-gap:.65rem;justify-items:stretch}
+  .site-footer .footer-memberships img{width:100%;max-width:none;height:3rem}
+  .site-footer .footer-note{width:100%;text-align:center}
+}
