@@ -61,3 +61,15 @@
 .photo-break{padding:0 0 clamp(3.5rem,8vw,7rem)}.photo-break-soft{padding:clamp(2rem,5vw,4rem) 0;background:var(--pale-green)}.photo-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.photo-pair figure{margin:0;overflow:hidden;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}.photo-pair img{display:block;width:100%;height:22rem;object-fit:cover}.photo-pair figcaption{padding:.85rem 1rem;color:var(--green-dark);font-size:.9rem;font-weight:600}.photo-triptych{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1rem}.photo-triptych img{display:block;width:100%;height:20rem;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}.wide-photo{position:relative;margin:0;overflow:hidden}.wide-photo img{display:block;width:100%;height:clamp(20rem,42vw,34rem);object-fit:cover}.wide-photo figcaption{position:absolute;right:max(1rem,calc((100% - var(--max))/2));bottom:1.5rem;max-width:min(28rem,calc(100% - 2rem));margin-left:1rem;padding:.85rem 1rem;border-radius:.75rem;background:rgb(255 255 255 / .92);color:var(--green-dark);font-weight:600;box-shadow:var(--shadow)}.contact-photo{margin:1.75rem 0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow)}.contact-photo img{display:block;width:100%;height:18rem;object-fit:cover}
 @media(max-width:52rem){.photo-pair{grid-template-columns:1fr}.photo-pair img{height:18rem}.photo-triptych{grid-template-columns:1fr 1fr}.photo-triptych img{height:15rem}.photo-triptych img:first-child{grid-column:1/-1}.wide-photo figcaption{bottom:1rem}.contact-photo img{height:15rem}}
 @media(max-width:34rem){.photo-triptych{grid-template-columns:1fr}.photo-triptych img,.photo-triptych img:first-child{grid-column:auto;height:14rem}.wide-photo img{height:20rem}.wide-photo figcaption{font-size:.82rem}}
+
+
+/* Mobile footer alignment */
+@media(max-width:52rem){
+  .site-footer .footer-grid{text-align:center;justify-items:center}
+  .site-footer .footer-grid>div:first-child{width:100%}
+  .site-footer .social-links{justify-content:center}
+  .site-footer nav{width:min(100%,22rem);text-align:left}
+  .site-footer nav a{display:block}
+  .site-footer .footer-memberships{width:min(100%,18rem);justify-content:center}
+  .site-footer .footer-note{text-align:center}
+}
